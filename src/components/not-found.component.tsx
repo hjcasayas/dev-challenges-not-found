@@ -1,6 +1,9 @@
 import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import getConfig from "next/config";
+
+const { publicRuntimeConfig } = getConfig();
 
 export const NotFoundComponent: FC = () => (
   <>
@@ -23,7 +26,9 @@ export const NotFoundComponent: FC = () => (
           The page your looking for might be removed or is temporarily
           unavailable
         </p>
-        <Link href="https://dev-challenges.hjcasayas.dev">
+        <Link
+          href={`${publicRuntimeConfig?.devChallengesBaseUrl}/responsive` || ""}
+        >
           <a className="inline-block text-white font-bold leading-5 py-6 px-12 bg-gray-900">
             BACK TO HOME PAGE
           </a>
