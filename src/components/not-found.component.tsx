@@ -1,9 +1,6 @@
 import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import getConfig from "next/config";
-
-const { publicRuntimeConfig } = getConfig();
 
 export const NotFoundComponent: FC = () => (
   <>
@@ -27,7 +24,11 @@ export const NotFoundComponent: FC = () => (
           unavailable
         </p>
         <Link
-          href={`${publicRuntimeConfig?.devChallengesBaseUrl}/responsive` || ""}
+          href={
+            process.env.NEXT_PUBLIC_DEV_CHALLENGES_BASE_URL != null
+              ? `${process.env.NEXT_PUBLIC_DEV_CHALLENGES_BASE_URL}/responsive`
+              : ""
+          }
         >
           <a className="inline-block text-white font-bold leading-5 py-6 px-12 bg-gray-900">
             BACK TO HOME PAGE
