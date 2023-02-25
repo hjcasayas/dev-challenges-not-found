@@ -22,12 +22,12 @@ export default function Home() {
             <div className="flex flex-col justify-between md:w-1/2">
               <div>
                 <h2
-                  className={`${spaceMono.className} font-bold text-4xl mb-8 md:text-6xl`}
+                  className={`${spaceMono.className} font-bold text-4xl mb-8 md:text-6xl md:max-w-[30rem]`}
                 >
                   I have bad news for you.
                 </h2>
                 <p
-                  className={`${spaceMono.className} text-lg font-normal mb-16 md:text-2xl`}
+                  className={`${spaceMono.className} text-lg font-normal mb-16 md:text-2xl md:max-w-[24rem]`}
                 >
                   The page you are looking for might be removed or is
                   temporarily unavailable
